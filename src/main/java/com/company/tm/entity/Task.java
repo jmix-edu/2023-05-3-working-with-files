@@ -1,6 +1,7 @@
 package com.company.tm.entity;
 
 import io.jmix.core.DeletePolicy;
+import io.jmix.core.FileRef;
 import io.jmix.core.annotation.DeletedBy;
 import io.jmix.core.annotation.DeletedDate;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
@@ -88,6 +89,28 @@ public class Task {
     @Column(name = "DELETED_DATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date deletedDate;
+
+    @Column(name = "TTACHMENT", length = 1024)
+    private FileRef attachment;
+
+    @Column(name = "ATTACHMENT2", length = 1024)
+    private FileRef attachment2;
+
+    public FileRef getAttachment2() {
+        return attachment2;
+    }
+
+    public void setAttachment2(FileRef attachment2) {
+        this.attachment2 = attachment2;
+    }
+
+    public FileRef getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(FileRef attachment) {
+        this.attachment = attachment;
+    }
 
     public List<Subtask> getSubtasks() {
         return subtasks;
